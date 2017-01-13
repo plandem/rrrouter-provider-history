@@ -10,7 +10,7 @@ class HistoryProvider extends React.Component {
 		this.navigate = (href) => this.onPushHref;
 
 		if(props.initHref) {
-			this.navigate(props.initHref);
+			this.navigate(props.initHref, true);
 		}
 	}
 
