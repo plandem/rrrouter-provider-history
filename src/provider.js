@@ -8,14 +8,16 @@ class HistoryProvider extends React.Component {
 		super(props);
 		this.state = {};
 		this.navigate = (href) => this.onPushHref;
-
-		if(props.initHref) {
-			this.onPushHref(props.initHref);
-		}
 	}
 
 	componentWillMount() {
 		this.props.history.subscribe(this.onPopHref);
+	}
+
+	componentDidMount() {
+		if(this.props.initHref) {
+			this.onPushHref(this.props.initHref);
+		}
 	}
 
 	componentWillUnmount() {
