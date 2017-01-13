@@ -8,6 +8,10 @@ class HistoryProvider extends React.Component {
 		super(props);
 		this.state = {};
 		this.navigate = (href) => this.onPushHref;
+
+		if(props.initHref) {
+			this.navigate(props.initHref);
+		}
 	}
 
 	componentWillMount() {
@@ -52,6 +56,7 @@ class HistoryProvider extends React.Component {
 }
 
 HistoryProvider.propTypes = {
+	initHref: PropTypes.string,
 	children: PropTypes.element.isRequired,
 	history: PropTypes.shape({
 		subscribe: PropTypes.func.isRequired,
