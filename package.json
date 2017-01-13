@@ -1,6 +1,6 @@
 {
   "name": "rrrouter-provider-history",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provider for rrrouter with history support",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
@@ -38,7 +38,7 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
-	"lodash": "4.x",
+    "lodash": "4.x",
     "rimraf": "^2.5.4",
     "rrrouter": "1.x",
     "rrrouter-history": "1.x"
