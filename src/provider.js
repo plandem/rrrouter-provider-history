@@ -7,17 +7,11 @@ class HistoryProvider extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {};
-		this.navigate = (href) => this.onPushHref;
+		this.navigate = this.onPushHref;
 	}
 
 	componentWillMount() {
 		this.props.history.subscribe(this.onPopHref);
-	}
-
-	componentDidMount() {
-		if(this.props.initHref) {
-			this.onPushHref(this.props.initHref);
-		}
 	}
 
 	componentWillUnmount() {
@@ -27,12 +21,13 @@ class HistoryProvider extends React.Component {
 	onPopHref = (href) => {
 		const route = parseHref(href);
 		this.setState(route);
+		this.props.history.update(route.href, false);
 	};
 
 	onPushHref = (href) => {
 		const route = parseHref(href);
-		this.props.history.update(route.href, true);
 		this.setState(route);
+		this.props.history.update(route.href, true);
 	};
 
 	go = (page) => {
@@ -52,6 +47,7 @@ class HistoryProvider extends React.Component {
 
 		const props = pick(this, Object.keys(Provider.propTypes));
 		props[RouterProps.locationPropName] = route;
+		props.initHref = this.props.initHref;
 
 		return React.createElement(Provider, props, this.props.children);
 	}
