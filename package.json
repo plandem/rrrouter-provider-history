@@ -37,7 +37,7 @@
     "rrrouter": "1.x"
   },
   "dependencies": {
-    "rrrouter-history": "1.x"
+    "rrrouter-history": "~1.1.2"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
