@@ -1,6 +1,6 @@
 {
   "name": "rrrouter-provider-history",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Provider for rrrouter with history support",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
