@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import pick from 'lodash/pick';
 import { Provider, RouterProps } from 'rrrouter';
 import { parseHref } from 'rrrouter-history';
